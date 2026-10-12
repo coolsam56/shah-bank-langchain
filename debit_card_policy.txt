@@ -1,0 +1,60 @@
+NOVABANK DEBIT CARD POLICY
+
+Document Version: 1.0
+
+1. DEBIT CARD OVERVIEW
+
+NovaBank debit cards allow customers to access their eligible
+bank accounts through ATM withdrawals, point-of-sale transactions,
+and supported online transactions.
+
+2. HOW TO BLOCK A DEBIT CARD
+
+If a customer suspects that their debit card has been lost,
+stolen, or compromised, they should block the card immediately.
+
+Customers can block their debit card through any of the following
+supported methods:
+
+- NovaBank mobile banking application.
+- NovaBank internet banking.
+- Calling the official NovaBank customer support number.
+- Visiting a NovaBank branch.
+
+Customers should verify their identity before requesting card
+blocking through customer support or branch channels.
+
+3. WHAT TO DO AFTER BLOCKING
+
+After a debit card has been blocked, customers should request a
+replacement card if they require continued debit card access.
+
+The replacement card may have a different card number and
+expiration date.
+
+4. LOST OR STOLEN CARD
+
+Customers should report a lost or stolen card immediately.
+NovaBank is not responsible for delays in reporting a lost or
+stolen card, subject to applicable terms and conditions.
+
+5. ATM PIN
+
+Customers should never share their ATM PIN, card PIN, OTP,
+internet banking password, or mobile banking credentials with
+anyone.
+
+NovaBank employees will not ask customers to disclose their
+confidential PIN or OTP.
+
+6. SUSPICIOUS TRANSACTIONS
+
+If a customer notices an unauthorized or suspicious transaction,
+they should immediately contact NovaBank through an official
+banking channel and report the transaction.
+
+7. IMPORTANT NOTE
+
+The information in this document is for the AI Banking Assistant
+training demonstration. Customers should use only official
+NovaBank channels for actual banking services.

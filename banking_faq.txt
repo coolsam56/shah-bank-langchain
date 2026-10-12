@@ -1,0 +1,112 @@
+NOVABANK BANKING FAQ
+
+Document Version: 1.0
+
+
+1. WHAT IS EMI?
+
+EMI stands for Equated Monthly Instalment.
+
+It is the fixed or scheduled amount a borrower pays periodically
+towards a loan. An EMI generally consists of both principal and
+interest components.
+
+The actual EMI depends on the loan amount, interest rate, and loan
+tenure.
+
+
+2. WHAT HAPPENS IF I MISS AN EMI?
+
+If a customer misses a scheduled EMI payment, applicable late
+payment charges or other consequences may apply according to the
+loan agreement and NovaBank's applicable policy.
+
+Repeated missed payments may negatively affect the customer's
+credit profile and may result in additional collection or recovery
+actions according to applicable terms.
+
+Customers who expect difficulty making a payment should contact
+NovaBank through an official channel as soon as possible.
+
+
+3. WHAT IS MINIMUM BALANCE?
+
+The minimum balance requirement depends on the type of NovaBank
+account.
+
+Customers should refer to the specific account terms and
+conditions for the applicable minimum balance requirement.
+
+
+4. HOW CAN I CONTACT NOVABANK?
+
+Customers should use official NovaBank channels such as:
+
+- NovaBank mobile banking application.
+- NovaBank internet banking.
+- Official NovaBank customer support.
+- NovaBank branches.
+
+
+5. HOW CAN I CHECK MY ACCOUNT BALANCE?
+
+Customers can check their account balance through supported
+NovaBank digital banking channels or by visiting a NovaBank branch.
+
+
+6. WHAT SHOULD I DO IF I FORGET MY INTERNET BANKING PASSWORD?
+
+Customers should use the official password reset or recovery
+option provided by NovaBank's internet banking service.
+
+Customers should never share their password or OTP with anyone.
+
+
+7. WHAT IS A PERSONAL LOAN?
+
+A personal loan is an unsecured loan that can be used for permitted
+personal financial requirements.
+
+NovaBank personal loan eligibility, interest rates, loan amounts,
+and tenure depend on applicable policy and customer profile.
+
+
+8. WHAT IS A HOME LOAN?
+
+A home loan is a loan provided for eligible residential property
+purposes such as purchasing, constructing, or renovating a home.
+
+Eligibility and applicable terms depend on the customer's profile
+and NovaBank policy.
+
+
+9. HOW CAN I REPORT AN UNAUTHORIZED TRANSACTION?
+
+Customers should immediately contact NovaBank through an official
+banking channel and report the unauthorized transaction.
+
+Customers should never share their OTP, PIN, password, or other
+confidential banking credentials with anyone.
+
+
+10. IMPORTANT SECURITY INFORMATION
+
+NovaBank will not ask customers to disclose confidential
+credentials such as:
+
+- ATM PIN
+- Card PIN
+- OTP
+- Internet banking password
+- Mobile banking password
+
+Customers should use only official NovaBank channels for banking
+services.
+
+
+11. IMPORTANT NOTE
+
+The information in this document is for the AI Banking Assistant
+training demonstration. Actual banking products, fees, policies,
+eligibility criteria, and service procedures may differ and should
+always be verified through official bank channels.
