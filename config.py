@@ -14,3 +14,4 @@ OPENAI_BASE_URL = os.getenv(
     "https://openrouter.ai/api/v1"
 )
 MODEL_NAME = os.getenv("MODEL_NAME", "")
+API_BASE_URL = os.getenv("API_BASE_URL", "http://127.0.0.1:8000")

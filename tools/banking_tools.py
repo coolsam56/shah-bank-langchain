@@ -1,7 +1,6 @@
 import httpx
 from langchain.tools import tool
-
-from config import PERSONAL_LOAN_ANNUAL_RATE
+from config import PERSONAL_LOAN_ANNUAL_RATE, API_BASE_URL
 from database import get_connection
 
 
@@ -133,7 +132,7 @@ def submit_loan_application(
 
     try:
         response = httpx.post(
-            "http://127.0.0.1:8000/applications",
+            f"{API_BASE_URL}/applications",
             json={
                 "customer_id": customer_id,
                 "loan_amount": loan_amount,
