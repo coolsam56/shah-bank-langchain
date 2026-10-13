@@ -23,7 +23,7 @@ It uses LangChain to coordinate an AI agent with four Python tools. The agent se
 
 - **Language:** Python 3.11
 - **Agent framework:** LangChain
-- **Language model API:** OpenRouter
+- **Language model API:** OpenAI API
 - **Backend API:** FastAPI
 - **Database:** SQLite
 - **Configuration:** python-dotenv
@@ -77,7 +77,7 @@ The virtual environment (`venv/`) and local database files should not be committ
 
 - Python 3.11
 - Git (optional)
-- An OpenRouter account and API key
+- An OpenAI account and API key with access to `gpt-4o-mini`
 - Visual Studio Code or another Python IDE
 
 ## 7. Installation and Setup
@@ -103,16 +103,16 @@ pip install -r requirements.txt
 Create or update the `.env` file in the project root:
 
 ```env
-OPENAI_API_KEY=your_openrouter_api_key
-OPENAI_BASE_URL=https://openrouter.ai/api/v1
-MODEL_NAME=openrouter/free
+OPENAI_API_KEY=your_openai_api_key
+OPENAI_BASE_URL=https://api.openai.com/v1
+MODEL_NAME=gpt-4o-mini
 BANK_NAME=DemoBank
 PERSONAL_LOAN_ANNUAL_RATE=10.5
 ```
 
 Replace the placeholder API key with your own key. Never commit `.env` or publish your API key.
 
-The project uses the OpenAI-compatible API interface provided by OpenRouter. A free model may be unavailable or rate-limited at times.
+The app uses the OpenAI API with `gpt-4o-mini`. Ensure your API key belongs to OpenAI and has access to this model. API usage may incur charges.
 
 ### Step 4: Initialize the database
 
@@ -231,7 +231,9 @@ To deploy:
 
 1. Push this repository to GitHub, keeping `render.yaml` at the repository root.
 2. In the Render Dashboard, choose **New > Blueprint**, connect the repository, and create the Blueprint.
-3. When prompted, enter your OpenRouter API key as `OPENAI_API_KEY` and your model identifier as `MODEL_NAME`. Do not commit these values or put them in `render.yaml`.
+3. When prompted, enter your OpenAI API key as `OPENAI_API_KEY`. The Blueprint sets the OpenAI API URL and `gpt-4o-mini` model. Do not commit your API key or put it in `render.yaml`.
 4. Wait for both services to finish deploying, then open the `smart-banking-agent` service URL.
 
 The Blueprint connects the Streamlit service to the API over Render's private network. The API uses a local SQLite database; on Render's free plan, its filesystem is temporary, so demo loan submissions can be lost when the service restarts or redeploys. This remains a fictional training application, not a production banking service.
+
+If the Blueprint already exists, update `OPENAI_API_KEY` in the `smart-banking-agent` service's environment settings and redeploy. The API key must be a valid OpenAI key with model access.

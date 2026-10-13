@@ -22,9 +22,9 @@ services:
       - key: OPENAI_API_KEY
         sync: false
       - key: MODEL_NAME
-        sync: false
+        value: gpt-4o-mini
       - key: OPENAI_BASE_URL
-        value: https://openrouter.ai/api/v1
+        value: https://api.openai.com/v1
       - key: API_BASE_URL
         fromService:
           type: web

@@ -1,3 +1,5 @@
+import logging
+
 import streamlit as st
 from langchain.messages import HumanMessage, AIMessage
 from agent import build_agent
@@ -105,9 +107,12 @@ if user_input:
             else:
                 st.write(content)
 
-        except Exception:
+        except Exception as exc:
+            logging.exception("Agent request failed")
             st.error(
-                "The request failed. Check API availability and model "
-                "configuration, then try again."
+                "The request failed. Check that the configured API key has "
+                "access to the selected model."
             )
+            with st.expander("Technical details"):
+                st.code(f"{type(exc).__name__}: {exc}")
             st.session_state.messages.pop()
