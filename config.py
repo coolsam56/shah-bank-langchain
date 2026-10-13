@@ -15,3 +15,5 @@ OPENAI_BASE_URL = os.getenv(
 )
 MODEL_NAME = os.getenv("MODEL_NAME", "")
 API_BASE_URL = os.getenv("API_BASE_URL", "http://127.0.0.1:8000")
+if not API_BASE_URL.startswith(("http://", "https://")):
+    API_BASE_URL = f"http://{API_BASE_URL}"

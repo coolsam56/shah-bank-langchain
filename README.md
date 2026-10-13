@@ -219,3 +219,19 @@ These figures are illustrative. Eligibility is based solely on the project's moc
 ## 14. Conclusion
 
 The project demonstrates an Agentic AI workflow in which a LangChain agent coordinates Python tools, retrieves mock banking data, performs calculations, applies business rules, and interacts with a REST API to record a confirmed loan application. It combines LLM-based reasoning with deterministic Python logic and database operations.
+
+## Deploying to Render
+
+The `render.yaml` Blueprint deploys two services from this repository:
+
+- `smart-banking-agent`: the Streamlit chat interface.
+- `smart-banking-api`: the FastAPI service used to submit demo applications.
+
+To deploy:
+
+1. Push this repository to GitHub, keeping `render.yaml` at the repository root.
+2. In the Render Dashboard, choose **New > Blueprint**, connect the repository, and create the Blueprint.
+3. When prompted, enter your OpenRouter API key as `OPENAI_API_KEY` and your model identifier as `MODEL_NAME`. Do not commit these values or put them in `render.yaml`.
+4. Wait for both services to finish deploying, then open the `smart-banking-agent` service URL.
+
+The Blueprint connects the Streamlit service to the API over Render's private network. The API uses a local SQLite database; on Render's free plan, its filesystem is temporary, so demo loan submissions can be lost when the service restarts or redeploys. This remains a fictional training application, not a production banking service.
