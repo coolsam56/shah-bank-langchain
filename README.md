@@ -23,7 +23,7 @@ It uses LangChain to coordinate an AI agent with four Python tools. The agent se
 
 - **Language:** Python 3.11
 - **Agent framework:** LangChain
-- **Language model API:** OpenAI API
+- **Language model API:** OpenRouter (OpenAI-compatible API)
 - **Backend API:** FastAPI
 - **Database:** SQLite
 - **Configuration:** python-dotenv
@@ -77,23 +77,30 @@ The virtual environment (`venv/`) and local database files should not be committ
 
 - Python 3.11
 - Git (optional)
-- An OpenAI account and API key with access to `gpt-4o-mini`
+- An OpenRouter account and API key with access to `openai/gpt-4o-mini`
 - Visual Studio Code or another Python IDE
 
 ## 7. Installation and Setup
 
 ### Step 1: Create and activate a virtual environment
 
-On Windows PowerShell, run these commands from the project directory:
+On macOS or Linux, run these commands from the project directory:
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+On Windows PowerShell, use:
 
 ```powershell
-py -3.11 -m venv venv
-.\venv\Scripts\Activate.ps1
+py -3.11 -m venv .venv
+.\.venv\Scripts\Activate.ps1
 ```
 
 ### Step 2: Install dependencies
 
-```powershell
+```bash
 python -m pip install --upgrade pip
 pip install -r requirements.txt
 ```
@@ -103,20 +110,20 @@ pip install -r requirements.txt
 Create or update the `.env` file in the project root:
 
 ```env
-OPENAI_API_KEY=your_openai_api_key
-OPENAI_BASE_URL=https://api.openai.com/v1
-MODEL_NAME=gpt-4o-mini
+OPENROUTER_API_KEY=your_openrouter_api_key
+OPENAI_BASE_URL=https://openrouter.ai/api/v1
+MODEL_NAME=openai/gpt-4o-mini
 BANK_NAME=DemoBank
 PERSONAL_LOAN_ANNUAL_RATE=10.5
 ```
 
 Replace the placeholder API key with your own key. Never commit `.env` or publish your API key.
 
-The app uses the OpenAI API with `gpt-4o-mini`. Ensure your API key belongs to OpenAI and has access to this model. API usage may incur charges.
+The app sends chat requests to OpenRouter using the `openai/gpt-4o-mini` model. Create an OpenRouter API key and ensure your OpenRouter account has access/credits for the selected model; usage may incur charges. Never put an OpenAI key in `OPENROUTER_API_KEY`.
 
 ### Step 4: Initialize the database
 
-```powershell
+```bash
 python database.py
 ```
 
@@ -128,7 +135,7 @@ This creates the SQLite database and inserts the fictional demo customer if the 
 
 In the first terminal:
 
-```powershell
+```bash
 uvicorn api:app --reload
 ```
 
@@ -141,13 +148,27 @@ Keep this terminal running while testing application submission.
 
 ### Step 6: Start the AI agent
 
-Open a second terminal, activate the same virtual environment, and run:
+Choose one of the following interfaces. Open a new terminal, activate the same
+virtual environment, and run the command for the interface you want.
 
-```powershell
+#### Terminal interface
+
+```bash
 python app.py
 ```
 
 Enter a banking query in the terminal. Type `exit` to stop the agent.
+
+#### Web interface
+
+```bash
+streamlit run streamlit_app.py
+```
+
+Open the local URL printed by Streamlit (usually `http://localhost:8501`).
+Keep the FastAPI service from Step 5 running while using the web or terminal
+agent to submit a demo loan application. Other agent features do not require
+the API service.
 
 ## 8. Example Workflow
 
@@ -210,7 +231,6 @@ These figures are illustrative. Eligibility is based solely on the project's moc
 
 ## 13. Future Enhancements
 
-- Add a web-based chat interface.
 - Implement stronger session-bound confirmation and duplicate-submission protection.
 - Add authentication and authorization.
 - Expand the test suite to cover the FastAPI endpoints.
@@ -231,9 +251,9 @@ To deploy:
 
 1. Push this repository to GitHub, keeping `render.yaml` at the repository root.
 2. In the Render Dashboard, choose **New > Blueprint**, connect the repository, and create the Blueprint.
-3. When prompted, enter your OpenAI API key as `OPENAI_API_KEY`. The Blueprint sets the OpenAI API URL and `gpt-4o-mini` model. Do not commit your API key or put it in `render.yaml`.
+3. When prompted, enter your OpenRouter API key as `OPENROUTER_API_KEY`. The Blueprint sets the OpenRouter API URL and `openai/gpt-4o-mini` model. Do not commit your API key or put it in `render.yaml`.
 4. Wait for both services to finish deploying, then open the `smart-banking-agent` service URL.
 
 The Blueprint connects the Streamlit service to the API over Render's private network. The API uses a local SQLite database; on Render's free plan, its filesystem is temporary, so demo loan submissions can be lost when the service restarts or redeploys. This remains a fictional training application, not a production banking service.
 
-If the Blueprint already exists, update `OPENAI_API_KEY` in the `smart-banking-agent` service's environment settings and redeploy. The API key must be a valid OpenAI key with model access.
+If the Blueprint already exists, update `OPENROUTER_API_KEY` in the `smart-banking-agent` service's environment settings and redeploy. The key must be a valid OpenRouter key with access/credits for the selected model.

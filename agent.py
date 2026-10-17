@@ -1,7 +1,7 @@
 from langchain.agents import create_agent
 from langchain_openai import ChatOpenAI
 
-from config import OPENAI_API_KEY, OPENAI_BASE_URL, MODEL_NAME
+from config import MODEL_NAME, OPENAI_BASE_URL, OPENROUTER_API_KEY
 from tools.banking_tools import BANKING_TOOLS
 
 
@@ -33,15 +33,15 @@ Rules:
 
 
 def build_agent():
-    if not OPENAI_API_KEY:
-        raise ValueError("Set OPENAI_API_KEY in your .env file.")
+    if not OPENROUTER_API_KEY:
+        raise ValueError("Set OPENROUTER_API_KEY in your .env file.")
 
     if not MODEL_NAME:
         raise ValueError("Set MODEL_NAME in your .env file.")
 
     model = ChatOpenAI(
         model=MODEL_NAME,
-        api_key=OPENAI_API_KEY,
+        api_key=OPENROUTER_API_KEY,
         base_url=OPENAI_BASE_URL,
         temperature=0,
     )
